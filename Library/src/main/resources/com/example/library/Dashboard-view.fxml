@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.library.DashboardController"
+            style="-fx-background-color: #f4f4f4;">
+
+   <children>
+      <VBox spacing="15.0"
+            AnchorPane.topAnchor="40.0"
+            AnchorPane.bottomAnchor="40.0"
+            AnchorPane.leftAnchor="40.0"
+            AnchorPane.rightAnchor="40.0"
+            style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;
+                   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 4);">
+
+         <children>
+            <Label text="Library Management System"
+                   maxWidth="Infinity"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;"
+                   alignment="CENTER" />
+
+            <Button fx:id="Main" text="Main" onAction="#handleMainButton"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #e6e6e6; -fx-background-radius: 8;
+                           -fx-text-fill: #333; -fx-font-size: 14px; -fx-cursor: hand; -fx-padding: 8 16;"
+                    onMouseEntered="#buttonHoverEnter" onMouseExited="#buttonHoverExit"/>
+
+            <Button fx:id="availableBooksButton" text="Available Books" onAction="#handleAvailableBooksButton"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #e6e6e6; -fx-background-radius: 8;
+                           -fx-text-fill: #333; -fx-font-size: 14px; -fx-cursor: hand; -fx-padding: 8 16;"
+                    onMouseEntered="#buttonHoverEnter" onMouseExited="#buttonHoverExit"/>
+
+            <Button fx:id="borrowedReturnButton" text="Borrowed/Return" onAction="#handleBorrowedReturnButton"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #e6e6e6; -fx-background-radius: 8;
+                           -fx-text-fill: #333; -fx-font-size: 14px; -fx-cursor: hand; -fx-padding: 8 16;"
+                    onMouseEntered="#buttonHoverEnter" onMouseExited="#buttonHoverExit"/>
+
+            <Button fx:id="finesButton" text="Fines" onAction="#handleFinesButton"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #e6e6e6; -fx-background-radius: 8;
+                           -fx-text-fill: #333; -fx-font-size: 14px; -fx-cursor: hand; -fx-padding: 8 16;"
+                    onMouseEntered="#buttonHoverEnter" onMouseExited="#buttonHoverExit"/>
+
+            <Button fx:id="logoutButton" text="Log Out" onAction="#handleLogoutButton"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 8;
+                           -fx-font-size: 14px; -fx-cursor: hand; -fx-padding: 8 16;"
+                    onMouseEntered="#logoutHoverEnter" onMouseExited="#logoutHoverExit"/>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

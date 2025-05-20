@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.library.FinesViewController"
+            prefHeight="450.0" prefWidth="650.0">
+
+    <VBox spacing="20.0" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+          AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10"
+          style="-fx-background-color: white; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 2);">
+
+        <!-- Title -->
+        <Label text="Fines Management"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <!-- Search bar -->
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <TextField fx:id="searchField" promptText="Search fines by borrower or book title..."
+                       HBox.hgrow="ALWAYS" style="-fx-font-size: 14px;"/>
+            <Button text="Search" onAction="#handleSearch"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 7 15;">
+                <tooltip>
+                    <Tooltip text="Search fines by borrower or book title"/>
+                </tooltip>
+            </Button>
+            <Button text="Refresh" onAction="#handleRefresh"
+                    style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 7 15;">
+                <tooltip>
+                    <Tooltip text="Refresh the fines list"/>
+                </tooltip>
+            </Button>
+        </HBox>
+
+        <!-- Fine details form -->
+        <GridPane hgap="15" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="130"/>
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+
+            <Label text="Book Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                   style="-fx-font-weight: 600;"/>
+            <TextField fx:id="bookTitleField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Enter book title"/>
+
+            <Label text="Borrower Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                   style="-fx-font-weight: 600;"/>
+            <TextField fx:id="borrowerNameField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Enter borrower name"/>
+
+            <Label text="Due Date:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                   style="-fx-font-weight: 600;"/>
+            <DatePicker fx:id="dueDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+            <Label text="Return Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                   style="-fx-font-weight: 600;"/>
+            <DatePicker fx:id="returnDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+            <Label text="Fine Amount:" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                   style="-fx-font-weight: 600;"/>
+            <TextField fx:id="fineAmountField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="e.g. 100"/>
+
+            <Label text="Date Paid:" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                   style="-fx-font-weight: 600;"/>
+            <DatePicker fx:id="datePaidPicker" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+        </GridPane>
+
+        <!-- Progress bar and pay button -->
+        <HBox spacing="15" alignment="CENTER_RIGHT">
+            <ProgressBar fx:id="progressBar" prefWidth="250" />
+            <Button fx:id="payFineButton" text="Pay Fine" onAction="#handlePayFine"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20;"
+            >
+                <tooltip>
+                    <Tooltip text="Click to process fine payment"/>
+                </tooltip>
+            </Button>
+        </HBox>
+
+        <!-- Fines history table -->
+        <TableView fx:id="finesTable" VBox.vgrow="ALWAYS" style="-fx-font-size: 13px;">
+            <columns>
+                <TableColumn fx:id="bookColumn" text="Book Title" prefWidth="150"/>
+                <TableColumn fx:id="borrowerColumn" text="Borrower" prefWidth="150"/>
+                <TableColumn fx:id="dueDateColumn" text="Due Date" prefWidth="100"/>
+                <TableColumn fx:id="returnDateColumn" text="Return Date" prefWidth="100"/>
+                <TableColumn fx:id="fineColumn" text="Fine" prefWidth="80"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+
+        <!-- Return to Dashboard button -->
+        <HBox alignment="CENTER_RIGHT">
+            <Button text="Return to Dashboard"
+                    onAction="#handleReturn"
+                    style="-fx-font-size: 14px; -fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 25;">
+                <tooltip>
+                    <Tooltip text="Go back to the dashboard"/>
+                </tooltip>
+            </Button>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

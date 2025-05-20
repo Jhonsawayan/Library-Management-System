@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.LogoutViewController">
+
+   <padding>
+      <Insets bottom="30" left="30" right="30" top="30" />
+   </padding>
+
+   <Label text="Are you sure you want to logout?" textAlignment="CENTER">
+      <font>
+         <Font name="Arial Bold" size="18.0" />
+      </font>
+   </Label>
+
+   <Button onAction="#handleLogout" style="-fx-background-color: #e53935; -fx-text-fill: white; -fx-font-size: 14px;" text="Logout" />
+
+   <Button onAction="#handleReturnToDashboard" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px;" text="Return to Dashboard" />
+
+</VBox>

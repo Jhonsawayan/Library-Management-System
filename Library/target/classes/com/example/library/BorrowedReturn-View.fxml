@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.library.BorrowedReturnViewController"
+            style="-fx-background-color: #f4f6f8;">
+
+   <VBox spacing="15.0"
+         AnchorPane.topAnchor="20.0" AnchorPane.bottomAnchor="20.0"
+         AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0"
+         style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 2);">
+
+      <!-- Search Bar -->
+      <HBox spacing="10.0" alignment="CENTER_LEFT">
+         <TextField fx:id="searchField"
+                    promptText="Search books..."
+                    style="-fx-font-size: 14px; -fx-pref-height: 32;"
+                    HBox.hgrow="ALWAYS" />
+         <Button onAction="#handleSearch"
+                 text="Search"
+                 style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 6 16;" />
+         <Button onAction="#handleRefresh"
+                 text="Refresh"
+                 style="-fx-background-color: #FFC107; -fx-text-fill: black; -fx-font-size: 14px; -fx-padding: 6 16;" />
+      </HBox>
+
+      <!-- Borrowed Books Table -->
+      <TableView fx:id="borrowedBooksTable"
+                 VBox.vgrow="ALWAYS"
+                 style="-fx-background-radius: 5; -fx-border-radius: 5;">
+         <columns>
+            <TableColumn fx:id="bookTitleColumn" prefWidth="200" text="Title" />
+            <TableColumn fx:id="borrowerColumn" prefWidth="150" text="Borrower" />
+            <TableColumn fx:id="borrowDateColumn" prefWidth="120" text="Borrow Date" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="120" text="Due Date" />
+            <TableColumn fx:id="returnDateColumn" prefWidth="120" text="Return Date" />
+         </columns>
+      </TableView>
+
+      <!-- Action Buttons -->
+      <HBox spacing="15.0" alignment="CENTER_RIGHT">
+         <Button onAction="#handleReturnToDashboard"
+                 text="Return to Dashboard"
+                 style="-fx-font-size: 14px; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 8 18; -fx-background-radius: 8;" />
+         <Button fx:id="returnButton"
+                 text="Return Book"
+                 onAction="#handleReturnBook"
+                 style="-fx-font-size: 14px; -fx-background-color: #E91E63; -fx-text-fill: white; -fx-padding: 8 18; -fx-background-radius: 8;" />
+      </HBox>
+
+   </VBox>
+</AnchorPane>

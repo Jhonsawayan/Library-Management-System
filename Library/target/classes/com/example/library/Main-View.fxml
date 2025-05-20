@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane
+        xmlns="http://javafx.com/javafx/17.0.12"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.library.MainController"
+        style="-fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);">
+
+    <children>
+        <VBox alignment="CENTER" spacing="20.0" prefWidth="500.0"
+              AnchorPane.topAnchor="30.0" AnchorPane.bottomAnchor="30.0"
+              AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0"
+              style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.3, 0, 4);">
+
+            <padding>
+                <Insets top="30" bottom="30" left="30" right="30"/>
+            </padding>
+
+
+            <!-- Welcome label -->
+            <Label text="📚 Welcome to the Library System"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2f4f4f;" />
+
+            <!-- Info area -->
+            <TextArea editable="false" wrapText="true" prefHeight="150.0" prefWidth="400.0"
+                      style="-fx-font-size: 14px; -fx-background-radius: 10; -fx-border-radius: 10;
+                             -fx-border-color: #d0d7de; -fx-border-width: 1; -fx-padding: 10;">
+                <text>
+                    This system allows you to:
+                    • Manage books
+                    • View available titles
+                    • Borrow and return books
+                    • Track fines
+
+                    ➤ Use the sidebar or top menu to explore different sections.
+                </text>
+            </TextArea>
+
+            <!-- Get Started button -->
+            <Button text="🚀 Get Started"
+                    onAction="#handleGetStarted"
+                    style="-fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white;
+                           -fx-padding: 10 30; -fx-background-radius: 10; -fx-font-weight: bold;" />
+        </VBox>
+    </children>
+</AnchorPane>
